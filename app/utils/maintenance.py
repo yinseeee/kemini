@@ -46,7 +46,7 @@ def schedule_cache_cleanup(response_cache_manager, active_requests_manager):
             asyncio.set_event_loop(loop)
             
             # 在这个新循环中运行清理操作
-          #  loop.run_until_complete(api_stats_manager.cleanup())
+            loop.run_until_complete(api_stats_manager.cleanup())
         except Exception as e:
             log('error', f"清理统计数据时出错: {str(e)}")
         finally:
